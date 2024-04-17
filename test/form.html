@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://i.ibb.co/ggQp7Yt/2560x1600-5430660-mountain-fog-scenery.jpg');
+            background-size: cover;
+        }
+
+        .centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            background-color: rgb(234, 232, 232);
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .image-container {
+            width: 40%;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        form {
+            width: 60%;
+            padding: 0 20px;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        label {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        select {
+            width: calc(100% - 20px);
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .radio-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: rgb(74, 74, 199);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .image-container {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            form {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="centered">
+    <div class="container">
+        <div class="image-container">
+            <img src="https://www.kindpng.com/picc/m/81-813810_transparent-group-of-students-png-college-student-cartoon.png" alt="students">
+        </div>
+        <form action="">
+            <h2>Sign up</h2>
+            <div>
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" placeholder="First Name">
+            </div>
+            <div>
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" placeholder="Last Name">
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Email">
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Password">
+            </div>
+            <div>
+                <label for="phoneNumber">Phone Number</label>
+                <input type="number" id="phoneNumber" placeholder="Phone Number">
+            </div>
+            <div>
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob">
+            </div>
+            <div>
+                <label for="gender">Gender</label>
+                <div class="radio-group">
+                    <input type="radio" id="male" name="gender">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender">
+                    <label for="female">Female</label>
+                </div>
+            </div>
+            <div>
+                <label for="subject">Choose a Subject</label>
+                <select id="subject">
+                    <option value="english">English</option>
+                    <option value="math">Math</option>
+                    <option value="islamic">Islamic</option>
+                    <option value="webDesign">Web Design</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

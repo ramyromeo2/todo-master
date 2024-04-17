@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="website_najdah.WebClient">
+        <Layout setCurrentCompenent.bind="setCurrentCompenent" showLoginModal="showLoginModal">
+            <t t-component="comps[currentcomponent.value]"/>
+            </Layout>
+            <LoginModalComponent t-if="state.isLoginModalVisible" />
+            <script src="website_najdah/static/src/webclient/script.js"></script>
+            
+    </t>
+
+</templates>

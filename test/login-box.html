@@ -1,0 +1,73 @@
+<!-- This is your main HTML file -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Modal</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100;200;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100;200;300;400;500;700;900&family=Almarai:wght@300;400;700&display=swap');
+
+
+</style>
+</head>
+<body>
+
+<!-- Login Button that triggers the modal -->
+<button id="loginBtn">تسجيل الدخول</button>
+
+<!-- The Modal -->
+<div id="loginModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">x</span>
+    <div class="content"></div>
+    <h2 class="box-head">بدء تسجيل الدخول او التسجيل لحجز الخدمة</h2>
+    <div class="label-input">
+      <label for="phone" class="label-phone">رقم الهاتف</label>
+      <div class="phone-input-container">
+        <select class="flag-dropdown" id="country-flag-dropdown" onchange="updateCountryCode()">
+          <option value="+1" data-country-code="US">🇺🇸</option>  
+          <option value="+91" data-country-code="IN">🇮🇳</option>
+          <option value="+966" data-country-code="SA" selected>SA</option> 
+        </select>
+        
+        
+        <div class="vertical-line"></div>
+        <span class="
+      country-code" id="dial-code">+966</span>
+      
+        <div class="editable-part" contenteditable="true" id="editable-part"></div>
+      </div>
+        </div>
+
+      <button type="submit" class="btn blue">تسجيل الدخول</button>
+      <button type="button" class="btn orange">تسجيل الدخول كزائر</button>
+      <p class="problem-text">
+        
+        نواجه مشكلة في تسجيل الدخول? 
+      <span class="problem-contact">اتصل بنا</span>
+      </p>
+   
+  </div>
+
+</div>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

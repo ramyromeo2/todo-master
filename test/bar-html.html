@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step Progress Bar</title>
+<style>
+   .progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin: 20px;
+    padding: 0;
+  }
+
+  .step {
+    text-align: center;
+    width: 20%;
+    position: relative;
+  }
+
+  .step::before,
+  .step::after {
+    content: '';
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    height: 1px;
+    background: #ccc;
+  }
+
+  .step::before {
+    right: 50%;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .step:first-child::before {
+    content: none;
+  }
+
+  .step::after {
+    left: 50%;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .step:last-child::after {
+    content: none;
+  }
+
+  .step.active::before,
+  .step.active::after {
+    background: #F06030;
+  }
+
+  .step.active .icon {
+    border-color: #244497;
+  }
+
+  .step .icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid #F06030; */
+    border-radius: 50%;
+    background: white;
+    color: #ccc;
+    z-index: 2;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .step.active .icon {
+    color: white;
+    background: #244497;
+    border-color: #244497;
+  }
+
+  .step .text {
+    color: #ccc;
+    display: block;
+    margin-top: 8px;
+  }
+
+  .step.active .text {
+    color: #244497;
+  }
+  
+  .icon svg {
+    fill: #244497;
+  }
+  
+  .icon.active svg path {
+    stroke: white;
+  }
+  
+</style>
+</head>
+<body>
+
+<div class="progress-container">
+  <div class="step ac">
+    <span class="icon">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="24" cy="24" r="24" fill="#F06030"/>
+      <path d="M26.0177 14.827L28.0711 18.6638C28.3511 19.1979 29.0977 19.7102 29.7277 19.8083L33.4494 20.386C35.8294 20.7566 36.3894 22.3698 34.6744 23.9612L31.7811 26.6644C31.2911 27.1222 31.0227 28.0051 31.1744 28.6373L32.0027 31.9835C32.6561 34.6322 31.1511 35.6568 28.6427 34.2725L25.1544 32.3432C24.5244 31.9944 23.4861 31.9944 22.8444 32.3432L19.3561 34.2725C16.8594 35.6568 15.3427 34.6213 15.9961 31.9835L16.8244 28.6373C16.9761 28.0051 16.7077 27.1222 16.2177 26.6644L13.3244 23.9612C11.6211 22.3698 12.1694 20.7566 14.5494 20.386L18.2711 19.8083C18.8894 19.7102 19.6361 19.1979 19.9161 18.6638L21.9694 14.827C23.0894 12.7452 24.9094 12.7452 26.0177 14.827Z" fill="white"/>
+      </svg>
+      
+      </span>
+    <span class="text p-orange">ماضي العمر</span>
+  </div>
+  <div class="step active">
+    <span class="icon"><svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 13.4286L11 22L26 2" fill="#244497"></path>
+      <path d="M2 13.4286L11 22L26 2" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+      </span>
+    <span class="text">جدد الباقة</span>
+  </div>
+  <div class="step active">
+    <span class="icon"><svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 13.4286L11 22L26 2" fill="#244497"></path>
+      <path d="M2 13.4286L11 22L26 2" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+      </span>
+    <span class="text">جدد الزيارة</span>
+  </div>
+  <div class="step active">
+    <span class="icon"><svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 13.4286L11 22L26 2" fill="#244497"></path>
+      <path d="M2 13.4286L11 22L26 2" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+      </span>
+    <span class="text">جدد الإقامة</span>
+  </div>
+  <div class="step active">
+    <span class="icon"><svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 13.4286L11 22L26 2" fill="#244497"></path>
+      <path d="M2 13.4286L11 22L26 2" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+      </span>
+    <span class="text">نوع الخدمة</span>
+  </div>
+</div>
+
+</body>
+</html>

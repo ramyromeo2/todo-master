@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .calendar-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .months {
+      display: flex;
+      border: 1px solid #ccc; /* Single border for all months */
+    }
+
+    .month {
+      flex: 1;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .month-name {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .days {
+      display: flex;
+      justify-content: space-around;
+      background-color: #f0f0f0;
+      padding: 5px;
+    }
+
+    .day {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 2px;
+    }
+
+    .grayed {
+      background-color: #ccc;
+    }
+
+    .numbers {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 5px;
+    }
+
+    .number {
+      margin-top: 5px;
+    }
+  </style>
+  <title>Date Picker</title>
+</head>
+<body>
+
+  <div class="calendar-container">
+    <div class="months">
+      <div class="month">
+        <div class="month-name">October 2023</div>
+        <div class="days">
+          <!-- Days of the week -->
+          <div class="day">Mon</div>
+          <div class="day">Tue</div>
+          <div class="day">Wed</div>
+          <div class="day">Thu</div>
+          <div class="day">Fri</div>
+          <div class="day">Sat</div>
+          <div class="day">Sun</div>
+        </div>
+        <div class="numbers">
+          <!-- Dates for October 2023 -->
+          <div class="number">1</div>
+          <div class="number">2</div>
+          <div class="number">3</div>
+          <div class="number">4</div>
+          <div class="number">5</div>
+          <div class="number">6</div>
+          <div class="number grayed">8</div>
+          <div class="number">9</div>
+          <div class="number">10</div>
+          <div class="number">11</div>
+          <div class="number">12</div>
+          <div class="number">13</div>
+          <div class="number">14</div>
+          <div class="number grayed">15</div>
+          <div class="number">16</div>
+          <div class="number">17</div>
+          <div class="number">18</div>
+          <div class="number">19</div>
+          <div class="number">20</div>
+          <div class="number">21</div>
+          <div class="number grayed">22</div>
+          <div class="number">24</div>
+          <div class="number">25</div>
+          <div class="number">26</div>
+          <div class="number">27</div>
+          <div class="number">28</div>
+          <div class="number">29</div>
+          <div class="number">30</div>
+          <div class="number">31</div>
+        </div>
+      </div>
+
+      <div class="month">
+        <div class="month-name">November 2023</div>
+        <div class="days">
+          <!-- Days of the week -->
+          <div class="day">Mon</div>
+          <div class="day">Tue</div>
+          <div class="day">Wed</div>
+          <div class="day">Thu</div>
+          <div class="day">Fri</div>
+          <div class="day">Sat</div>
+          <div class="day">Sun</div>
+        </div>
+        <div class "numbers">
+          <!-- Dates for November 2023 -->
+          <div class="number">1</div>
+          <div class="number">2</div>
+          <div class="number">3</div>
+          <div class="number">4</div>
+          <div class="number">5</div>
+          <div class="number">6</div>
+          <div class="number">7</div>
+          <div class="number grayed">10</div>
+          <div class="number grayed">11</div>
+          <div class="number grayed">12</div>
+          <div class="number grayed">13</div>
+          <div class="number grayed">17</div>
+          <div class="number grayed">18</div>
+          <div class="number grayed">24</div>
+          <div class="number grayed">25</div>
+          <div class="number grayed">26</div>
+          <div class="number grayed">27</div>
+          <div class="number grayed">28</div>
+          <div class="number grayed">31</div>
+        </div>
+      </div>
+
+      <div class="month">
+        <div class="month-name">December 2023</div>
+        <div class="days">
+          <!-- Days of the week -->
+          <div class="day">Mon</div>
+          <div class="day">Tue</div>
+          <div class="day">Wed</div>
+          <div class="day">Thu</div>
+          <div class="day">Fri</div>
+          <div class="day">Sat</div>
+          <div class="day">Sun</div>
+        </div>
+        <div class="numbers">
+          <!-- Dates for December 2023 -->
+          <div class="number">1</div>
+          <div class="number">2</div>
+          <div class="number">3</div>
+          <div class="number">4</div>
+          <div class="number grayed">7</div>
+          <div class="number">8</div>
+          <div class="number">9</div>
+          <div class="number">10</div>
+          <div class="number">11</div>
+          <div class="number">12</div>
+          <div class="number">13</div>
+          <div class="number grayed">15</div>
+          <div class="number">16</div>
+          <div class="number">17</div>
+          <div class="number grayed">19</div>
+          <div class="number">20</div>
+          <div class="number">21</div>
+          <div class="number">22</div>
+          <div class="number grayed">23</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

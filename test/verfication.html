@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verification Code Input</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100;200;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100;200;300;400;500;700;900&family=Almarai:wght@300;400;700&display=swap');
+.new-verification-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.new-verification-box {
+  width: 40px; 
+  height: 40px;
+  margin: 0 10px; 
+  border: 1px solid var(--primary-two, #F06030);
+  border-radius: 5px;
+  text-align: center;
+  font-size: 24px; 
+}
+
+
+.new-verification-box:focus {
+  outline: none;
+  border-color: var(--primary-one, #244497);
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 480px) {
+  .new-verification-container {
+    padding: 10px;
+  }
+  .new-verification-box {
+    width: 10vw; /* Responsive width */
+    height: 10vw; /* Responsive height */
+    margin: 0 3vw; /* Responsive spacing */
+  }
+}
+
+
+.new-box-head {
+  color: var(--primary-one, #244497);
+  font-family: 'Almarai';
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.new-modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6); 
+}
+
+.new-modal-content {
+  display: flex;
+  flex-direction: column;
+  background-color: #fefefe;
+  align-items: center;
+  justify-content: center;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 16px;
+  position: relative;
+}
+
+.new-close {
+  color: #aaa;
+  left:10px;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+}
+
+.new-close:hover,
+.new-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.new-btn {
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.new-blue, .new-orange {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 399px;
+  height: 48px;
+  padding: 16px;
+  gap: 10px;
+  border-radius: 8px;
+  color: #FFF;
+  text-align: center;
+  font-family: Almarai;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.new-blue {
+  background: var(--primary-one, #244497);
+}
+
+.new-orange {
+  background-color: white;
+  border: 1px solid var(--primary-two, #F06030);
+  color: var(--primary-two, #F06030);
+}
+
+#new-loginModal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.new-elements {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.new-phone-input-container {
+  position: relative;
+  display: flex;
+  border-radius: 4px;
+  border: 1px solid var(--text, #5E718D);
+  background: #FFF;
+  padding: 5px;
+  align-items: center;
+  width: 100vw;
+  overflow: hidden;
+  max-width: 381px;
+  height: 56px;
+  justify-content: space-between;
+}
+
+.new-flag-dropdown {
+  flex-grow: 0;
+  border: none;
+  background: transparent;
+  padding: 5px;
+  margin-right: -1px; 
+  z-index: 10;
+}
+
+.new-phone-input {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  border: none;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.new-vertical-line {
+  height: 24px;
+  border-left: 1px solid grey;
+  margin-right: 5px;
+}
+
+.new-country-code {
+  color: grey;
+  margin-right: 5px;
+}
+
+.new-editable-part {
+  text-align: left;
+  flex-grow: 1;
+  border: none;
+  outline: none;
+}
+
+.new-problem-text,
+.new-problem-contact,
+.new-label-phone,
+.new-label-input label {
+  color: var(--text, #5E718D);
+  font-family: Alexandria;
+  font-size: 14px;
+  font-weight: 400;
+}
+.new-label-input label{
+  text-align: right ;
+}
+.new-label-input{
+  text-align: right;
+}
+.new-problem-contact {
+  color: var(--primary-two, #F06030);
+}
+
+@media screen and (max-width: 480px) {
+  .new-modal-content {
+    margin: 5% auto;
+  }
+
+  .new-blue, .new-orange {
+    width: 95%;
+  }
+  .new-phone-input-container{
+    width: 77vw;
+  }
+  .new-box-head {
+    font-size: 20px;
+  }
+
+  .new-problem-text{
+    width: 230px;
+    font-size: 13px !important;
+  }
+
+  .new-problem-text span{ 
+    font-size: 10px;
+  }
+}
+
+.new-one-line-p{
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 50px;
+}
+</style>
+</head>
+<body>
+
+
+  <div id="new-loginModal" class="new-modal">
+
+    <!-- Modal content -->
+    <div class="new-modal-content">
+      <span class="new-close">&times;</span>
+      <div class="new-content"></div>
+      <h2 class="new-box-head">رمز التحقيق</h2>
+      <p class="new-problem-text">الرجاء ادخال الرمز المرسل علي الرقم  966984987645 </p>
+      <div class="new-verification-container">
+
+        <input type="text" maxlength="1" pattern="[0-9]*" inputmode="numeric" class="new-verification-box" />
+        <input type="text" maxlength="1" pattern="[0-9]*" inputmode="numeric" class="new-verification-box" />
+        <input type="text" maxlength="1" pattern="[0-9]*" inputmode="numeric" class="new-verification-box" />
+        <input type="text" maxlength="1" pattern="[0-9]*" inputmode="numeric" class="new-verification-box" />
+      </div>
+  
+        <button type="submit" class="new-btn new-blue">تاكيد</button>
+       <div class="new-one-line-p">
+        <p class="new-problem-text">
+          لم يصلك الكود. 
+                  <span class="new-problem-contact">اعد ارسال الكود</span>
+        </p>
+     <span class="new-problem-contact">تعديل رقم الجوال</span>
+    </div>
+    </div>
+  
+  </div>
+
+<script>
+
+const newInputs = document.querySelectorAll('.new-verification-box');
+newInputs.forEach((newInput, index) => {
+  newInput.addEventListener('keyup', (e) => {
+    if (e.key >= 0 && e.key <= 9) {
+      if (index !== newInputs.length - 1) {
+        // Move to next input
+        newInputs[index + 1].focus();
+      }
+    } else if (e.key === 'Backspace') {
+      if (index !== 0) {
+        // Move to previous input
+        newInputs[index - 1].focus();
+      }
+    }
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="name">
+
+    </div>
+<input type="text" name="" id="phone" value="966583794686">
+
+<button onclick="login()">Login</button>
+
+<input type="text" id="otp" >
+<button onclick="sendOtp()">send otp</button>
+
+<script>
+  function login(){
+      const myHeaders = new Headers();
+      myHeaders.append("Appname", "najdah");
+      myHeaders.append("Content-Type", "application/json");
+
+      const inputData = document.querySelector("#phone").value;
+      const raw = JSON.stringify({ "login": inputData });
+
+      const requestOptions = {
+          method: "POST",
+          headers: myHeaders,
+          body: raw,
+          redirect: "follow"
+      };
+
+      fetch("https://test.najdah.app/jer/api/v1/client/easy/login", requestOptions)
+      .then(response => response.json())
+      .then(result => {
+          if (result && result.result) {
+              console.log("Login response:", result);
+              window.localStorage.setItem('loginData', JSON.stringify(result.result)); // Storing the 'result' part directly
+          } else {
+              console.error("Unexpected response format:", result);
+          }
+      })
+      .catch(error => console.error('Login error:', error));
+  }
+
+  function sendOtp(){
+      const myHeaders = new Headers();
+      myHeaders.append("Lang", "ar");
+      myHeaders.append("Appversion", "4.3.3");
+      myHeaders.append("Appname", "{{app}}"); // Make sure to replace "{{app}}" with the actual app name
+      myHeaders.append("Platform", "postman");
+      myHeaders.append("Content-Type", "application/json");
+
+      const otpCode = document.querySelector("#otp").value;
+      let loginData = JSON.parse(window.localStorage.getItem('loginData'));
+      
+      if (!loginData) {
+          console.error("No login data available.");
+          return;
+      }
+
+      const raw = JSON.stringify({
+          "login_request_id": loginData.login_request, // Adjusted to the correct field
+          "code": otpCode
+      });
+
+      const requestOptions = {
+          method: "POST",
+          headers: myHeaders,
+          body: raw,
+          redirect: "follow"
+      };
+
+      fetch("https://test.najdah.app/jer/api/v1/client/sms/confirm/easy/login", requestOptions)
+      .then(response => response.json())
+      .then(result => {
+          if (result && result.result) {
+              console.log("OTP Confirmation response:", result);
+              const name = result.result.name; // Access 'name' correctly
+              document.querySelector("#name").innerHTML = name;
+          } else {
+              console.error("Unexpected OTP response format:", result);
+          }
+      })
+      .catch(error => console.error('OTP confirmation error:', error));
+  }
+</script>
+
+</body>
+</html>
